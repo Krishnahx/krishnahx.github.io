@@ -1,0 +1,419 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ====== BODY ====== */
+body {
+  background: #0f0f0f;
+  padding: 30px;
+  font-family: 'Inter', sans-serif;
+}
+
+/* ====== PAGE ====== */
+.page {
+  max-width: 900px;
+  margin: auto;
+  background: #f4f4f4;
+  padding: 50px 50px 30px; /* bottom padding reduced */
+  position: relative;
+  overflow: hidden;
+}
+
+/* ====== NAVBAR (FINAL FIX) ====== */
+
+.navbar {
+  display: flex;
+  gap: 24px;
+  padding: 24px 32px;
+  position: relative;
+  z-index: 50;
+}
+
+/* LINKS */
+.navbar a {
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  color: #000000;       /* ALWAYS visible */
+  opacity: 0.6;
+
+  transition: opacity 0.3s ease, text-decoration 0.3s ease;
+}
+
+.navbar a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 18px 20px;
+    gap: 18px;
+  }
+}
+
+
+/* ====== GRADIENT BLOBS ====== */
+.page::before,
+.page::after {
+  content: "";
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  filter: blur(90px);
+  z-index: 0;
+}
+
+.page::before {
+  background: #ffb36b;
+  top: -120px;
+  left: -120px;
+}
+
+.page::after {
+  background: #8b8bff;
+  bottom: -120px;
+  right: -120px;
+}
+
+/* ====== LAYOUT ====== */
+.top,
+.bottom {
+  display: flex;
+  gap: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.left {
+  flex: 1.2;
+}
+
+.right {
+  flex: 0.8;
+}
+
+/* ====== HEADINGS ====== */
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 52px;
+  line-height: 1.1;
+  margin-bottom: 25px;
+}
+
+h3 {
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 25px 0 10px;
+}
+
+h4 {
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 25px 0 10px;
+}
+
+/* ====== TEXT ====== */
+p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #444;
+}
+
+/* ====== PHOTO ====== */
+.photo-wrap {
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ffb36b, #8b8bff);
+  padding: 6px;
+  margin-bottom: 20px;
+}
+
+.photo-wrap img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10%;
+  object-fit: cover;
+}
+
+/* ====== CONTACTS ====== */
+ul {
+  list-style: none;
+  font-size: 13px;
+}
+
+ul li {
+  margin-bottom: 8px;
+}
+
+ul span {
+  display: inline-block;
+  width: 70px;
+  color: #888;
+}
+
+/* ====== BOTTOM SECTION ====== */
+.bottom {
+  margin-top: 50px;
+  margin-bottom: 0;
+}
+
+.col {
+  flex: 1;
+}
+
+/* ====== BLOCKS ====== */
+.block {
+  margin-bottom: 25px;
+}
+
+.block b {
+  display: block;
+  margin-top: 5px;
+}
+
+.block small {
+  color: #888;
+}
+
+/* ====== SKILLS ====== */
+.skill {
+  margin-bottom: 18px;
+}
+
+.skill span {
+  font-size: 14px;
+}
+
+.line {
+  height: 4px;
+  background: #e0e0e0;
+  margin-top: 6px;
+  position: relative;
+}
+
+.line i {
+  display: block;
+  height: 100%;
+  background: linear-gradient(to right, #ff9f4a 60%, #8b8bff 60%);
+}
+
+/* ====== RESPONSIVE (THIS FIXES YOUR PROBLEM) ====== */
+@media (max-width: 768px) {
+  .footer {
+    margin-top: 15px;
+  }
+}
+
+  body {
+    padding: 10px;
+  }
+
+  .page {
+    padding: 30px 20px;
+  }
+
+  .top,
+  .bottom {
+    flex-direction: column;
+  }
+
+  h1 {
+    font-size: 38px;
+  }
+
+  .right {
+    margin-top: 30px;
+  }
+
+.photo-wrap {
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ffb36b, #8b8bff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.photo-wrap img {
+  width: 85%;
+  height: 85%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+  /* gradient control on mobile */
+  .page::before {
+    width: 220px;
+    height: 220px;
+    top: -140px;
+    left: -140px;
+  }
+
+  .page::after {
+    width: 260px;
+    height: 260px;
+    bottom: -160px;
+    right: -160px;
+  }
+}
+@media (max-width: 768px) {
+  .footer {
+    margin-top: 40px;
+  }
+}
+
+/* ====== FOOTER ====== */
+.footer {
+  width: 100%;            /* Ensure it takes full width */
+  margin-top: 40px;       /* Spacing from content */
+  padding: 20px 0;        /* Consistent padding */
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  text-align: center;
+  /* background: transparent; */ /* Agar background color alag dikh raha hai toh ise use karein */
+}
+
+.footer p {
+  font-size: 13px;        /* Slightly larger for readability */
+  letter-spacing: 0.5px;
+  color: #666;            /* Neutral grey */
+  margin: 0;              /* Remove default p margins */
+  display: flex;          /* To align text and heart icon perfectly */
+  justify-content: center;
+  align-items: center;
+  gap: 5px;               /* Space between text and heart */
+}
+
+
+/* ===== CONTACT PAGE FIX ===== */
+
+.bottom {
+  display: flex;
+  gap: 40px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.col {
+  flex: 1;
+  min-width: 280px;
+}
+
+/* TEXT BLOCKS */
+.block {
+  margin-bottom: 18px;
+}
+
+.block b {
+  display: block;
+  font-size: 13px;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+  color: #000000; /* FIX */
+}
+
+.block p {
+  font-size: 14px;
+  color: #444;
+}
+
+/* FORM */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  background: transparent;
+  border: 1px solid #ccc;   /* FIX */
+  padding: 12px 14px;
+  color: #000;              /* FIX */
+  font-size: 14px;
+  outline: none;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #888;
+}
+
+/* BUTTON */
+.contact-form button {
+  background: #000;   /* FIX */
+  color: #fff;
+  border: none;
+  padding: 12px;
+  font-size: 13px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: #333;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .bottom {
+    flex-direction: column;
+  }
+}
+
+.social-media {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.social-media h5 {
+  font-size: 16px;
+  margin-bottom: 15px;
+  color: #000;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.social-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #000;
+  color: #fff;
+  font-size: 20px;
+  transition: 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: translateY(-3px);
+  opacity: 0.85;
+}
+
+.social-icons a {
+  text-decoration: none; /* underline remove */
+}
+
+/* Platform colors */
+.social-icons a:nth-child(1) { background: #E1306C; } /* Instagram */
+.social-icons a:nth-child(2) { background: #7289DA; } /* Discord */
+.social-icons a:nth-child(3) { background: #BD081C; } /* Pinterest */
+.social-icons a:nth-child(4) { background: #0088CC; } /* Telegram */
